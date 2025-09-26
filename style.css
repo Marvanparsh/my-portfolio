@@ -1,0 +1,105 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    color: #999999;
+    background: #1f1f1f;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+img {
+    max-width: 100%;
+}
+a {
+    text-decoration: none;
+}
+.text-right {
+    text-align: right;
+}
+
+/* Section Header */
+.section-header h1 {
+    font-size: 48px;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 33px;
+}
+.section-header h1 span {
+    color: #28e98c;
+}
+
+
+.main-content {
+    max-width: 1260px;
+    padding: 80px 15px 180px 15px;
+    margin: auto;
+    text-align: center;
+}
+
+.main-content .main-phase {
+    margin-bottom: 130px;
+}
+.main-content .main-phase .inner {
+    background: #3a3a3c;
+    padding: 95px 20px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+.main-content .main-phase .inner img {
+    border-radius: 20px;
+}
+.main-content .main-phase .title {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+}
+.main-content .main-phase .title a {
+    color: #fff;
+    display: inline-block;
+}
+
+.phase {
+    background: #4d4d4f;
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 88px;
+    
+}
+
+.phase:last-child {
+    margin-bottom: 0;
+}
+.phase img {
+    border-radius: 20px;
+    margin: 0px 0px -9px 0px;
+    border: 1px solid rgb(22, 19, 19);
+}
+.phase .title {
+    position: absolute;
+    bottom: 70px;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 300;
+}
+.phase .title a {
+    color: #fff;
+    transition: .3s;
+    border-bottom: 1px solid transparent;
+    display: inline-block;
+}
+.phase:hover .title a {
+    border-bottom-color: #fff;
+}
+.phase.solid-color {
+    border: 1px solid #4d4d4f;
+}
+
+

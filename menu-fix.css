@@ -1,0 +1,228 @@
+/* Menu and Settings Functionality CSS */
+.responsive-sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    background: #000;
+    z-index: 9999;
+    transition: left 0.3s ease;
+}
+
+.responsive-sidebar-menu.active {
+    left: 0;
+}
+
+.responsive-sidebar-menu .overlay {
+    position: fixed;
+    top: 0;
+    left: 300px;
+    width: calc(100vw - 300px);
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.global-color {
+    position: fixed;
+    top: 20px;
+    right: -400px;
+    z-index: 9998;
+    transition: right 0.3s ease;
+}
+
+.global-color.active {
+    right: 20px;
+}
+
+.global-color .inner {
+    position: relative;
+}
+
+.global-color .inner .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.icon-menu {
+    position: fixed;
+    top: 20px;
+    right: 70px;
+    z-index: 10000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.icon-menu:hover {
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+.icon-menu .bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.setting-toggle {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    background: #333;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.setting-toggle:hover {
+    background: #555;
+    transform: rotate(90deg);
+}
+
+/* Hover effects for all clickable icons */
+.scroll-to {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-to:hover {
+    color: #007bff;
+    transform: translateX(5px);
+}
+
+.menu .scroll-to:hover {
+    background: rgba(0,123,255,0.1);
+    border-radius: 5px;
+}
+
+.scroll-nav .scroll-to:hover {
+    background: rgba(0,123,255,0.2);
+    border-radius: 50%;
+}
+
+.theme-btn {
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: #007bff;
+    transform: translateY(-2px);
+}
+
+.color-boxed a {
+    transition: all 0.3s ease;
+}
+
+.color-boxed a:hover {
+    transform: scale(1.2);
+}
+
+.social-links a {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+
+.close-settings {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-settings:hover {
+    color: #ff4757;
+    transform: rotate(90deg);
+}
+
+/* Down arrow hover effect */
+.go-to-project-btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.go-to-project-btn:hover {
+    transform: translateY(10px);
+}
+
+.go-to-project-btn:hover .las.la-arrow-down {
+    color: #007bff;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Social profile icons hover */
+.social-profile a {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-profile a:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Service icons hover */
+.service-item i {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-item:hover i {
+    color: #007bff;
+    transform: scale(1.2);
+}
+
+/* Section header icons hover */
+.subtitle i {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.subtitle:hover i {
+    color: #007bff;
+    transform: rotate(360deg);
+}
+
+/* Upload attachment hover */
+.upload-attachment label {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-attachment label:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+.upload-attachment label:hover i {
+    color: #007bff;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
