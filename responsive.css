@@ -22,24 +22,34 @@
 
 @media (max-width: 1555px) {
     .left-sidebar {
-        max-width: 350px;
-        padding: 30px;
+        max-width: 380px;
+        padding: 35px;
     }
     .left-sidebar > img.me {
         width: 100%;
-        max-width: 250px;
+        max-width: 260px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 46px;
     }
     .left-sidebar .sidebar-header .designation {
         line-height: 1.4;
+        font-size: 13px;
+    }
+    .left-sidebar .social-profile {
+        gap: 35px;
+    }
+    .left-sidebar .social-profile li a {
+        width: 50px;
+        height: 50px;
+        line-height: 44px;
     }
 }
 
 @media (max-width: 1220px) {
     .custom-container {
-        max-width: 767px;
+        max-width: 90%;
+        padding: 0 20px;
     }
     .content-width {
         max-width: 100%;
@@ -49,12 +59,11 @@
     }
     .left-sidebar {
         position: relative;
-        max-width: 767px;
+        max-width: 100%;
         left: 0;
-        margin: auto;
+        margin: 55px auto 20px auto;
         top: 0;
         transform: translateY(0);
-        margin-top: 20px;
         display: none;
     }
 
@@ -63,9 +72,11 @@
     }
     .left-sidebar > img.me {
         width: auto;
+        max-width: 280px;
     }
     .icon-menu {
         position: fixed;
+        z-index: 999;
     }
     .menu {
         display: none !important;
@@ -79,19 +90,21 @@
     }
     .about-area .about-content p {
         max-width: 100%;
+        text-align: justify;
     }
     .testimonial-area {
         padding-top: 50px;
     }
 
     .services-items {
-        display: flex;
-        gap: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
     .services-items .service-item {
         margin-bottom: 0;
-        padding: 30px 30px 30px 30px;
-        width: 33.3333%;
+        padding: 30px 25px;
+        width: 100%;
     }
     .services-items .service-item h2 {
         font-size: 20px;
@@ -99,14 +112,34 @@
     }
     .services-items .service-item p {
         margin-bottom: 25px;
+        font-size: 14px;
+        line-height: 1.6;
     }
     .services-items .service-item i {
-        font-size: 20px;
+        font-size: 24px;
         top: 25px;
-        right: 20px;
+        right: 25px;
     }
     .pricing-table-items .pricing-table .theme-btn {
         padding: 11px 40px 10px 40px;
+    }
+    
+    /* Skills Grid Improvement */
+    .skills .skill {
+        margin-bottom: 30px;
+    }
+    
+    .skills .skill .skill-inner {
+        padding: 40px 20px 45px 20px;
+    }
+    
+    /* Portfolio Adjustments */
+    .portfolio-items .portfolio-item .portfolio-item-inner {
+        height: 320px;
+    }
+    
+    .portfolio-items .portfolio-item.portfolio-full .portfolio-item-inner {
+        height: 360px;
     }
 }
 @media (max-width: 977px) {
@@ -128,6 +161,13 @@
     .icon-menu {
         right: 30px;
         top: 30px;
+        width: 50px;
+        height: 50px;
+        gap: 3px;
+    }
+    .icon-menu span {
+        width: 18px;
+        height: 2px;
     }
     .hero-section .hero-content .go-to-project-btn {
         margin-left: 0;
@@ -135,6 +175,11 @@
     .skills-area .skills-content .row .col-md-3 {
         flex: 0 0 auto;
         width: 50%;
+    }
+    .skills-area .skills-content .row .col-md-4 {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 20px;
     }
     .clients-logos .row .col-md-3 {
         flex: 0 0 auto;
@@ -158,6 +203,7 @@
     }
     .contact-area .contact-content h3 {
         margin-bottom: 50px;
+        text-align: center;
     }
     .header-area .custom-container .row .col-sm-6 {
         flex: 0 0 auto;
@@ -231,25 +277,26 @@
         margin-bottom: 60px;
     }
     .global-color .inner .global-color-option {
-        padding: 100px 50px;
+        padding: 50px 30px;
     }
     .global-color .global-color-option .color-boxed {
         margin-bottom: 50px;
         padding-top: 10px;
+        gap: 20px;
     }
     .global-color .inner .global-color-option .global-color-option-inner .themes {
         padding-top: 10px;
     }
     .global-color .inner .global-color-option .global-color-option-inner .themes li {
-        margin-right: 40px;
-        margin-bottom: 20px;
+        margin-right: 20px;
+        margin-bottom: 15px;
     }
     .services-items {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: block;
     }
     .services-items .service-item {
         width: 100%;
+        margin-bottom: 15px;
     }
 
     .blog-sidebar {
@@ -264,10 +311,37 @@
     .footer-area .footer-widget-item {
         margin-bottom: 40px;
     }
+    
+    /* Portfolio Grid Improvements */
+    .portfolio-items .portfolio-item {
+        margin-bottom: 30px;
+    }
+    
+    .certifications-items .certification-item {
+        margin-bottom: 20px;
+    }
+    
+    /* Better Spacing */
+    .section-header {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .about-area,
+    .resume-area,
+    .services-area,
+    .skills-area,
+    .portfolio-area,
+    .certifications-area {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
 }
 @media (max-width: 584px) {
     .subtitle {
         margin-bottom: 40px;
+        font-size: 11px;
+        padding: 8px 18px;
     }
     .section-header h1 {
         font-size: 38px;
@@ -327,6 +401,34 @@
     .comments-area .comments .children {
         padding-left: 40px;
     }
+    
+    /* Enhanced Mobile Typography */
+    .about-area .about-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .resume-area .resume-content .resume-timeline .item h2 {
+        font-size: 18px;
+    }
+    
+    .resume-area .resume-content .resume-timeline .item p {
+        font-size: 12px;
+    }
+    
+    /* Better Touch Targets */
+    .theme-btn {
+        min-height: 48px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .menu li a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 @media (max-width: 425px) {
     .comments-area .comments .comments-list .comment-item .comment-body .comment-content h4 {
@@ -337,5 +439,56 @@
     .comments-area .comments .comments-list .comment-item .comment-body .comment-content h4 .date {
         margin-left: 26px;
         margin-top: 10px;
+    }
+    
+    /* Enhanced Mobile Experience */
+    .hero-section .hero-content h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+    
+    .hero-section .hero-content .go-to-project-btn {
+        width: 100px;
+        height: 100px;
+        margin: 15px auto;
+    }
+    
+    .left-sidebar {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .left-sidebar .social-profile {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .left-sidebar .social-profile li a {
+        width: 40px;
+        height: 40px;
+        line-height: 36px;
+        font-size: 16px;
+    }
+    
+    .services-items .service-item {
+        padding: 20px 15px;
+    }
+    
+    .skills .skill .skill-inner {
+        padding: 25px 10px 30px 10px;
+    }
+    
+    .skills .skill .skill-inner i {
+        font-size: 35px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .portfolio-items .portfolio-item .portfolio-item-inner {
+        height: 220px;
+        border-radius: 12px;
+    }
+    
+    .certifications-items .certification-item .certification-item-inner {
+        height: 180px;
     }
 }

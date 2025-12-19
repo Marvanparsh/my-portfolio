@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#28e98c">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>first page</title>
     <style></style>
     <link rel="stylesheet" href="style1.css">
@@ -17,7 +21,9 @@
     <link rel="stylesheet" href="smooth-scrollbar.css">
     <link rel="stylesheet" href="light-box-min.css">
     <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="enhanced-responsive.css">
     <link rel="stylesheet" href="enhanced-animations.css">
+    <link rel="stylesheet" href="copy-protection.css">
     <style>
         body{
             background: #000;
@@ -118,6 +124,11 @@
                             </a>
                         </li>
                         <li>
+                            <a class="scroll-to" href="#certifications">
+                                <i class="las la-certificate"></i> <span>Certifications</span>
+                            </a>
+                        </li>
+                        <li>
                             <a class="scroll-to" href="#contact">
                                 <i class="las la-envelope"></i> <span>Contact</span>
                             </a>
@@ -130,13 +141,13 @@
                     <p>Social</p>
                     <ul class="social-links d-flex align-items-center">
                         <li>
-                            <a href=""><i class="lab la-twitter"></i></a>
+                            <a href="https://github.com/Marvanparsh"><i class="lab la-github"></i></a>
                         </li>
                         <li>
-                            <a href=""><i class="lab la-dribbble"></i></a>
+                            <a href="https://www.linkedin.com/in/pawan-panwar-162746236?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="lab la-linkedin"></i></a>
                         </li>
                         <li>
-                            <a href=""><i class="lab la-instagram"></i></a>
+                            <a href="https://www.instagram.com/marvan_parsh/"><i class="lab la-instagram"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -172,6 +183,11 @@
             <li>
                 <a class="scroll-to" href="#portfolio">
                     <span>Portfolio</span> <i class="las la-grip-vertical"></i>
+                </a>
+            </li>
+            <li>
+                <a class="scroll-to" href="#certifications">
+                    <span>Certifications</span> <i class="las la-certificate"></i>
                 </a>
             </li>
             <li>
@@ -252,7 +268,7 @@
                                     <h1 class="scroll-animation" data-animation="fade_from_bottom" style="opacity: 1; transform: translate(0px, 0px);">Every great design begin with<br>
                                         an even <span>better story</span></h1>
                                 </div>
-                                <p class="scroll-animation" data-animation="fade_from_bottom" style="opacity: 1; transform: translate(0px, 0px);">As a web developer, you have strong technical skills in HTML, CSS, JavaScript, and server-side programming languages. You can create responsive and accessible websites, work on both front-end and back-end development, and collaborate effectively in a team. You continuously learn and adapt to new technologies, and your portfolio showcases your expertise and previous projects.</p>
+                                <p class="scroll-animation" data-animation="fade_from_bottom" style="opacity: 1; transform: translate(0px, 0px);">As a Results-driven Software Engineer with hands-on experience in designing and delivering scalable, secure microservices using Java, Spring Boot, and Spring Cloud. I specialize in building enterprise-grade backend systems with JWT-based authentication, role-based access control, and clean layered architecture, while ensuring high code quality through unit testing and continuous analysis. I bring full-stack exposure with React and a strong problem-solving mindset, focused on developing reliable, maintainable, and performance-optimized applications.</p>
                             </div>
                         </div>
                     </section>
@@ -312,13 +328,13 @@
                                     <div class="service-item scroll-animation" data-animation="fade_from_bottom" style="opacity: 1; transform: translate(0px, 0px);">
                                         <i class="las la-bezier-curve"></i>
                                         <h2>Website Design</h2>
-                                        <p>I created digital products with unique ideas use HTML,CSS &amp; JS and React!</p>
-                                        <span class="projects">2 Projects & working...</span>
+                                        <p>Designing clean, responsive, and user-centric interfaces that deliver clarity and seamless user experiences!</p>
+                                        <span class="projects">Several Projects & working...</span>
                                     </div>
                                     <div class="service-item scroll-animation" data-animation="fade_from_bottom" style="opacity: 1; transform: translate(0px, 0px);">
                                         <i class="las la-code"></i>
                                         <h2>Development</h2>
-                                        <p>I build Intractive Website go live with Web, JS or React, Spring Boot with Backend Services and Database! </p>
+                                        <p>Developing scalable, high-performance websites with secure architecture and modern technologies! </p>
                                         <span class="projects">End-To-End, Secure and Payment Integrated Envt..</span>
                                     </div>
                                 </div>
@@ -541,8 +557,8 @@
                                         </div>
                                     </div>
             
-                                    <div class="col-md-6 scroll-animation" data-animation="fade_from_left" style="opacity: 1; transform: translate(0px, 0px); width: 100%;">
-                                        <div class="portfolio-item portfolio-half">
+                                    <div class="col-md-12 scroll-animation" data-animation="fade_from_left">
+                                        <div class="portfolio-item portfolio-full">
                                             <div class="portfolio-item-inner" onclick="openGallery(1)" data-images="./assets/weatherApp.png,./assets/weatherApp2.png,./assets/weatherApp3.png,./assets/weatherApp4.png">
                                                 <img src="./assets/weatherApp.png" alt="Portfolio">
             
@@ -615,6 +631,115 @@
                         </div>
                     </section>
 
+                    <section class="certifications-area page-section scroll-to-page" id="certifications">
+                        <div class="custom-container">
+                            <div class="certifications-content content-width">
+                                <div class="section-header">
+                                    <h4 class="subtitle scroll-animation" data-animation="fade_from_right">
+                                        <i class="las la-certificate"></i> certifications
+                                    </h4>
+                                    <h1 class="scroll-animation" data-animation="fade_from_bottom">Featured <span>Certificates</span></h1>
+                                </div>
+            
+                                <div class="row certifications-items">
+                                    <div class="col-md-6 scroll-animation" data-animation="fade_from_left">
+                                        <div class="certification-item">
+                                            <div class="certification-item-inner" onclick="openCertGallery(0)" data-images="./assets/Certifications/Microsoft AI-900.png">
+                                                <img src="./assets/Certifications/Microsoft AI-900.png" alt="Microsoft AI-900 Certificate">
+                                                <div class="certification-overlay">
+                                                    <h3>Microsoft AI-900</h3>
+                                                    <p>Azure AI Fundamentals</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
+                                        <div class="certification-item">
+                                            <div class="certification-item-inner" onclick="openCertGallery(1)" data-images="./assets/Certifications/Google Cloud Gen AI.png">
+                                                <img src="./assets/Certifications/Google Cloud Gen AI.png" alt="Google Cloud Gen AI Certificate">
+                                                <div class="certification-overlay">
+                                                    <h3>Google Cloud</h3>
+                                                    <p>Generative AI Fundamentals</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-md-4 scroll-animation" data-animation="fade_from_bottom">
+                                        <div class="certification-item">
+                                            <div class="certification-item-inner" onclick="openCertGallery(2)" data-images="./assets/Certifications/Java.jpeg">
+                                                <img src="./assets/Certifications/Java.jpeg" alt="Java Certificate">
+                                                <div class="certification-overlay">
+                                                    <h3>Java Programming</h3>
+                                                    <p>Core Java Certification</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    
+            
+                                    <div class="col-md-4 scroll-animation" data-animation="fade_from_bottom">
+                                        <div class="certification-item">
+                                            <div class="certification-item-inner" onclick="openCertGallery(4)" data-images="./assets/Certifications/Agile.png">
+                                                <img src="./assets/Certifications/Agile.png" alt="Agile Certificate">
+                                                <div class="certification-overlay">
+                                                    <h3>Agile Methodology</h3>
+                                                    <p>Project Management</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 scroll-animation" data-animation="fade_from_bottom">
+                                        <div class="certification-item">
+                                            <div class="certification-item-inner" onclick="openCertGallery(3)" data-images="./assets/Certifications/SQL.jpeg">
+                                                <img src="./assets/Certifications/SQL.jpeg" alt="SQL Certificate">
+                                                <div class="certification-overlay">
+                                                    <h3>SQL Database</h3>
+                                                    <p>Database Management</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-md-6 scroll-animation" data-animation="fade_from_left">
+                                        <div class="certification-item">
+                                            <div class="certification-item-inner" onclick="openCertGallery(5)" data-images="./assets/Certifications/Udemy Scrum.png">
+                                                <img src="./assets/Certifications/Udemy Scrum.png" alt="Scrum Certificate">
+                                                <div class="certification-overlay">
+                                                    <h3>Scrum Master</h3>
+                                                    <p>Agile Framework</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
+                                        <div class="certification-item">
+                                            <div class="certification-item-inner" onclick="openCertGallery(6)" data-images="./assets/Certifications/Ocean.png">
+                                                <img src="./assets/Certifications/Ocean.png" alt="Ocean Certificate">
+                                                <div class="certification-overlay">
+                                                    <h3>Ocean Protocol</h3>
+                                                    <p>Data Economy</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Certification Modal -->
+                    <div class="portfolio-modal" id="certificationModal">
+                        <span class="modal-close" onclick="closeCertGallery()">&times;</span>
+                        <div class="modal-content">
+                            <img class="modal-image" id="certModalImage" src="" alt="Certificate Image">
+                        </div>
+                    </div>
+
                     <!-- Portfolio Modal -->
                     <div class="portfolio-modal" id="portfolioModal">
                         <span class="modal-close" onclick="closeGallery()">&times;</span>
@@ -642,7 +767,7 @@
                                 <h3 class="scroll-animation" data-animation="fade_from_bottom" style="opacity: 1; transform: translate(0px, 0px);">panwarpawan507@gmail.com</h3>
                                 <div class="col-md-12">
                                             <div class="input-group submit-btn-wrap">
-                                                <a href="./assets/Pawan_Resume.pdf" download="Pawan_Panwar_Resume.pdf" class="theme-btn">
+                                                <a href="./assets/Pawan_Resume.pdf" download="Pawan_Resume.pdf" class="theme-btn">
                                                     <i class="las la-download"></i> Download Resume
                                                 </a>
                                             </div>
@@ -724,7 +849,8 @@
         <script src="./assets/js/ajax-form.js"></script>
         <script src="./assets/js/color.js"></script>
         <script src="./assets/js/portfolio-gallery.js"></script>
-        <link rel="stylesheet" href="enhanced-animations.css">
+        <script src="./assets/js/certification-gallery.js"></script>
+        <script src="copy-protection.js"></script>
     
     
     <div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;">

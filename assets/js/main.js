@@ -55,9 +55,9 @@ $(function(){
     $(window).scroll(function() {
             
         var windscroll = $(window).scrollTop();
-        if (windscroll >= 0) {
+        if (windscroll >= 100) {
             $('.page-section').each(function(i) {
-                if ($(this).position().top <= windscroll - -1) {
+                if ($(this).position().top <= windscroll + 200) {
                     $('.scroll-nav .scroll-to.active').removeClass('active');
                     $('.scroll-nav .scroll-to').eq(i).addClass('active');
                     $('.scroll-nav-responsive a.active').removeClass('active');
@@ -77,8 +77,7 @@ $(function(){
             $('.scroll-to-page').each(function(i) {
 
                 var wscrolldecress = windscroll + 1;
-                // console.log(wscrolldecress);
-                if ($(this).position().top <= wscrolldecress - 0) {
+                if ($(this).position().top <= wscrolldecress + 200) {
                     $('.scroll-nav .scroll-to.active').removeClass('active');
                     $('.scroll-nav .scroll-to').eq(i).addClass('active');
                     $('.scroll-nav-responsive a.active').removeClass('active');
@@ -165,8 +164,9 @@ $(function(){
     //     }
     // });
 
-    window.addEventListener('scroll', {
-        scroll_animations,
+    // Initialize scroll animations when DOM is ready
+    $(document).ready(function() {
+        setTimeout(scroll_animations, 100);
     });
 
 
@@ -207,61 +207,75 @@ $(function(){
 
 
 function scroll_animations() {
-    // var allow_on_mobile = !0;
-    // if (typeof config_scroll_animation_on_mobile !== "undefined") allow_on_mobile = config_scroll_animation_on_mobile;
-    // if (allow_on_mobile == !1 && is_mobile_device) return;
-    var defaults = {
-        duration: 1.2,
-        ease: "power4.out",
-        animation: "fade_from_bottom",
-        once: !1,
-    };
-    gsap.utils.toArray(".scroll-animation").forEach(function (box) {
-        var gsap_obj = {};
-        var settings = {
-            // ease: box.dataset.animationEase || defaults.ease,
-            duration: box.dataset.animationDuration || defaults.duration,
-        };
-        var animations = {
-            fade_from_bottom: {
-                y: 180,
-                opacity: 0,
-            },
-            fade_from_top: {
-                y: -180,
-                opacity: 0,
-            },
-            fade_from_left: {
-                x: -180,
-                opacity: 0,
-            },
-            fade_from_right: {
-                x: 180,
-                opacity: 0,
-            },
-            fade_in: {
-                opacity: 0,
-            },
-            rotate_up: {
-                y: 180,
-                rotation: 10,
-                opacity: 0,
-            },
-        };
-        var scroll_trigger = {
-            scrollTrigger: {
-                trigger: box,
-                once: defaults.once,
-                start: "top bottom+=20%",
-                // start: "top bottom+=5%",
-                toggleActions: "play none none reverse",
-                markers: !1,
-            },
-        };
-        jQuery.extend(gsap_obj, settings);
-        jQuery.extend(gsap_obj, animations[box.dataset.animation || defaults.animation]);
-        jQuery.extend(gsap_obj, scroll_trigger);
-        gsap.from(box, gsap_obj);
+    const elements = document.querySelectorAll('.scroll-animation');
+    
+    // Reset all elements to initial state
+    elements.forEach(element => {
+        const animation = element.dataset.animation || 'fade_from_bottom';
+        
+        // Remove any existing inline styles first
+        element.removeAttribute('style');
+        
+        // Set initial animation state
+        element.style.opacity = '0';
+        element.style.transition = 'all 1.2s ease';
+        
+        switch(animation) {
+            case 'fade_from_bottom':
+                element.style.transform = 'translateY(50px)';
+                break;
+            case 'fade_from_top':
+                element.style.transform = 'translateY(-50px)';
+                break;
+            case 'fade_from_left':
+                element.style.transform = 'translateX(-50px)';
+                break;
+            case 'fade_from_right':
+                element.style.transform = 'translateX(50px)';
+                break;
+            case 'rotate_up':
+                element.style.transform = 'translateY(50px) rotate(5deg)';
+                break;
+        }
+    });
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translate(0, 0) rotate(0deg)';
+                }, 100);
+            } else {
+                // Reset when out of view
+                const element = entry.target;
+                const animation = element.dataset.animation || 'fade_from_bottom';
+                element.style.opacity = '0';
+                
+                switch(animation) {
+                    case 'fade_from_bottom':
+                        element.style.transform = 'translateY(50px)';
+                        break;
+                    case 'fade_from_top':
+                        element.style.transform = 'translateY(-50px)';
+                        break;
+                    case 'fade_from_left':
+                        element.style.transform = 'translateX(-50px)';
+                        break;
+                    case 'fade_from_right':
+                        element.style.transform = 'translateX(50px)';
+                        break;
+                    case 'rotate_up':
+                        element.style.transform = 'translateY(50px) rotate(5deg)';
+                        break;
+                }
+            }
+        });
+    }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+    
+    elements.forEach(element => {
+        observer.observe(element);
     });
 }
-scroll_animations();

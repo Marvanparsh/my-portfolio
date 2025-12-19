@@ -1122,6 +1122,8 @@ body .body-overlay {
     border-color: #ffffff;
 }
 
+
+
 /* Portfolio Gallery Modal */
 .portfolio-modal {
     position: fixed;
@@ -1201,6 +1203,56 @@ body .body-overlay {
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 14px;
+}
+
+/* 17 - Certifications */
+.certifications-area {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+.certifications-items .certification-item {
+    margin-bottom: 30px;
+}
+.certifications-items .certification-item .certification-item-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 250px;
+}
+.certifications-items .certification-item .certification-item-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.certifications-items .certification-item .certification-item-inner:hover img {
+    transform: scale(1.05);
+}
+.certifications-items .certification-item .certification-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+.certifications-items .certification-item .certification-item-inner:hover .certification-overlay {
+    transform: translateY(0);
+}
+.certifications-items .certification-item .certification-overlay h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--primary_color);
+}
+.certifications-items .certification-item .certification-overlay p {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.9;
 }
 
 /* 18 - Contact */
