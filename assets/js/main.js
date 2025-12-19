@@ -3,6 +3,7 @@ $(function(){
 
     $(window).on('load', function () {
         $('.page-loader').delay('500').fadeOut(1000);
+        setTimeout(scroll_animations, 100);
     });
 
     $(document).ready(function() {
@@ -166,7 +167,7 @@ $(function(){
 
     // Initialize scroll animations when DOM is ready
     $(document).ready(function() {
-        setTimeout(scroll_animations, 100);
+        setTimeout(scroll_animations, 50);
     });
 
 
@@ -209,12 +210,11 @@ $(function(){
 function scroll_animations() {
     const elements = document.querySelectorAll('.scroll-animation');
     
+    if (elements.length === 0) return;
+    
     // Reset all elements to initial state
     elements.forEach(element => {
         const animation = element.dataset.animation || 'fade_from_bottom';
-        
-        // Remove any existing inline styles first
-        element.removeAttribute('style');
         
         // Set initial animation state
         element.style.opacity = '0';
@@ -236,6 +236,15 @@ function scroll_animations() {
             case 'rotate_up':
                 element.style.transform = 'translateY(50px) rotate(5deg)';
                 break;
+        }
+        
+        // Immediately check if in viewport
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translate(0, 0) rotate(0deg)';
+            }, 150);
         }
     });
     
