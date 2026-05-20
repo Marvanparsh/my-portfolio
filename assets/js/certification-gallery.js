@@ -10,7 +10,9 @@ function openCertGallery(index) {
         './assets/Certifications/SQL.jpeg',
         './assets/Certifications/Agile.png',
         './assets/Certifications/Udemy Scrum.png',
-        './assets/Certifications/Ocean.png'
+        './assets/Certifications/Ocean.png',
+        './assets/Certifications/Miscrosoft AI-102.png',
+        './assets/Certifications/ocean2.png'
     ];
     
     modalImage.src = certItems[index];

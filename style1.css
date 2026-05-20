@@ -1210,49 +1210,149 @@ body .body-overlay {
     padding-top: 90px;
     padding-bottom: 90px;
 }
-.certifications-items .certification-item {
-    margin-bottom: 30px;
+
+/* ── Intelligent Bento-style collage grid ── */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 180px;
+    gap: 12px;
 }
-.certifications-items .certification-item .certification-item-inner {
+
+/* Pattern repeats every 9 cards: 2 heroes + 7 standard */
+/* Row 1: [hero 2×2] [card] [card] */
+.certification-item:nth-child(9n+1) { grid-column: span 2; grid-row: span 2; }
+/* Row 1-2 right side fills naturally */
+/* Row 3: [card] [card] [hero 2×2] */
+.certification-item:nth-child(9n+6) { grid-column: span 2; grid-row: span 2; }
+/* Row 4: wide banner */
+.certification-item:nth-child(9n+9) { grid-column: span 2; }
+
+.certification-item {
+    min-height: 0;
+    min-width: 0;
+}
+
+.certification-item .certification-item-inner {
     position: relative;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 14px;
     cursor: pointer;
-    height: 250px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    background: #111;
 }
-.certifications-items .certification-item .certification-item-inner img {
+
+.certification-item .certification-item-inner:hover {
+    border-color: var(--primary_color);
+    box-shadow: 0 0 0 1px var(--primary_color), 0 8px 32px rgba(40, 233, 140, 0.12);
+}
+
+.certification-item .certification-item-inner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    object-position: center top;
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.certifications-items .certification-item .certification-item-inner:hover img {
-    transform: scale(1.05);
+
+.certification-item .certification-item-inner:hover img {
+    transform: scale(1.06);
 }
-.certifications-items .certification-item .certification-overlay {
+
+/* Overlay — always visible, deepens on hover */
+.certification-item .certification-overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: #fff;
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.25) 45%,
+        transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px 16px 12px;
+    transition: background 0.35s ease;
 }
-.certifications-items .certification-item .certification-item-inner:hover .certification-overlay {
-    transform: translateY(0);
+
+.certification-item .certification-item-inner:hover .certification-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.96) 0%,
+        rgba(0, 0, 0, 0.45) 55%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
 }
-.certifications-items .certification-item .certification-overlay h3 {
-    font-size: 18px;
+
+.certification-item .certification-overlay h3 {
+    font-size: 13px;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     color: var(--primary_color);
+    line-height: 1.3;
+    letter-spacing: 0.2px;
 }
-.certifications-items .certification-item .certification-overlay p {
-    font-size: 14px;
+
+.certification-item .certification-overlay p {
+    font-size: 11px;
     margin: 0;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.3;
+}
+
+/* Hero cards get bigger text */
+.certification-item:nth-child(9n+1) .certification-overlay h3,
+.certification-item:nth-child(9n+6) .certification-overlay h3 {
+    font-size: 17px;
+}
+.certification-item:nth-child(9n+1) .certification-overlay p,
+.certification-item:nth-child(9n+6) .certification-overlay p {
+    font-size: 13px;
+}
+
+/* ── Tablet: 3 columns ── */
+@media (max-width: 1024px) {
+    .certifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 160px;
+        gap: 10px;
+    }
+    .certification-item:nth-child(9n+1) { grid-column: span 2; grid-row: span 2; }
+    .certification-item:nth-child(9n+6) { grid-column: span 2; grid-row: span 2; }
+    .certification-item:nth-child(9n+9) { grid-column: span 3; grid-row: span 1; }
+}
+
+/* ── Small tablet / large mobile: 2 columns ── */
+@media (max-width: 680px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 140px;
+        gap: 9px;
+    }
+    /* Reset all spans first */
+    .certification-item:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+    /* Re-apply: every 1st in pattern is wide */
+    .certification-item:nth-child(9n+1) { grid-column: span 2; grid-row: span 1; }
+    .certification-item:nth-child(9n+6) { grid-column: span 2; grid-row: span 1; }
+    .certification-item:nth-child(9n+9) { grid-column: span 2; grid-row: span 1; }
+    .certification-item .certification-overlay h3 { font-size: 12px; }
+    .certification-item .certification-overlay p  { font-size: 10px; }
+    .certification-item:nth-child(9n+1) .certification-overlay h3,
+    .certification-item:nth-child(9n+6) .certification-overlay h3 { font-size: 13px; }
+}
+
+/* ── Mobile: 2 columns, tighter ── */
+@media (max-width: 420px) {
+    .certifications-grid {
+        grid-auto-rows: 120px;
+        gap: 8px;
+    }
+    .certification-item .certification-overlay { padding: 10px 12px 8px; }
 }
 
 /* 18 - Contact */
